@@ -28,7 +28,7 @@ public class ProducerDemoWithCallback {
             final ProducerRecord<String, String> record = new ProducerRecord<String, String>("first_topic", "hello world "+ Integer.toString(i));
             //send the data //this is asynchronous
             producer.send(record, new Callback() {
-                public void onCompletion(RecordMetadata recordMetadProducerDemoWithCallbackata, Exception e) {
+                public void onCompletion(RecordMetadata recordMetadata, Exception e) {
                     //executes every time a record  is sucessfully sent or an exception is thrown
                     if(e ==null){
                         //the record was successfully sent
